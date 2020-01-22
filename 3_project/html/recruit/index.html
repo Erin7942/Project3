@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 포트폴리오 </title>
+    <link rel="icon" href="../../images/icon/favicon.ico"><!-- 파비콘 -->
+    <link rel="apple-touch-icon" href="../../images/layout/icon114.png"><!-- ios 모바일 바로가기 아이콘 설정 -->
+    <link rel="shortcut icon" href="../../images/layout/icon114.png"><!-- 안드로이드 모바일 바로가기 아이콘 설정  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- respond.min.js는 ie9 미만의 하위 브라우저에서 미디어쿼리를 인식할수 있도록 만들어진 스크립트 파일, 로컬에서는 안되고 서버에 업로드 후 확인, css를 먼저 작성하고 하단에 위치 -->
+    <!--[if lt IE 9]>
+        <script src="../../js/html5shiv.min.js"></script>
+        <script src="../../js/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js"></script>
+    <script src="../../js/anim.js"></script>
+</head>
+<body data-depth-one="5" data-depth-two="1">
+    <div id="skip">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+    <!-- 
+        gnb 네비게이션에 마우스 오버 : #header.active
+        50px 이상 스크롤바를 움직이면 : #header.scroll
+     -->
+    <header id="header">
+        <div class="wide p_r">
+            <h1 class="logo">
+                <a href="">포트폴리오</a>
+            </h1>
+            <!-- 모바일 버전에서만 노출
+            .open 열기, .close.on 닫기 -->
+            <button type="button" class="btn_all open" aria-label="전체메뉴 열기">
+                <span class="line top"></span>
+                <span class="line mid"></span>
+                <span class="line btm"></span>
+            </button>
+            <nav id="gnb">
+                <h2 class="sr-only">주메뉴</h2>
+                <ul>
+                    <li>
+                        <a href="">PROJECT</a>
+                    </li>
+                    <li>
+                        <a href="">CREATOR</a>
+                    </li>
+                    <li>
+                        <a href="">SKILLS</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="dim"></div><!-- 모바일 네비게이션 아래 검정 마스크 -->
+        </div>
+    </header>
+
+    <div class="top_visual visual5">
+        <video id="spaceVideo" class="video" width="1920" height="auto" autoplay muted>
+            <source src="../../images/contents/spaceOddessey.mp4" type="video/mp4">
+        </video>
+        <div class="txt">
+            <h2>CREATING THE FUTURE</h2>
+            <div class="Underline">
+                <p class="left"></p>
+                <p class="right"></p>
+            </div>
+            <div class="background"></div>
+            <div class="ani_txt">
+                <div class="underlay"></div>
+                    <span class="initial">
+                    <span>Bongacious</span>
+                    <span>Design</span>
+                    <span>Expression</span>
+                </span>
+                    <span class="final">
+                    <span>Creative</span>
+                    <span>DESIGN</span>
+                    <span>Expression</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <section id="content" class="area">
+        <h3 class="sr-only">project</h3>
+        <ul class="talent clearfix">
+            <h2>PROJECT</h2>
+            <div class="mask left">
+                <div class="semiCircleWrapper">
+                  <div class="semiCircle">
+                    <div class="semiCircleInner"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mask right">
+                <div class="semiCircleWrapper">
+                  <div class="semiCircle">
+                    <div class="semiCircleInner"></div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="hero-circles">
+                <div class="row">
+                  <div class="mobile-slider"></div>
+                  <ul>
+                    <li>
+                      <span class="border"></span>
+                      <div class="discover circle" data-name="discover">
+                        <div class="bg" style="background-image:url( https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/home-discover.png)" data-bg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/home-discover.png"></div>
+                      </div>
+                      <p class="tagline first">
+                        <a href="/our-process/discover/">
+                          <span class="title closed">Discover</span>
+                          <span class="title open">Learn More About Discovery Services</span>
+                          <span class="subtitle">Research <span>+</span> Strategy</span>
+                        </a>
+                      </p>
+                    </li>
+                    <li>
+                      <span class="border"></span>
+                      <div class="create circle" data-name="create">
+                        <div class="bg" style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/home-create.png)" data-bg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/home-create.png"></div>
+                      </div>
+                      <p class="tagline second">
+                        <a href="/our-process/create/">
+                          <span class="title closed">Create</span>
+                          <span class="title open">Learn More About Creation Services</span>
+                          <span class="subtitle">Design <span>+</span> Development <span>+</span> Marketing</span>
+                        </a>
+                      </p>
+                    </li>
+                    <li>
+                      <span class="border"></span>
+                      <div class="evolve circle" data-name="evolve">
+                        <div class="bg" style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/home-evolve.png)" data-bg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/home-evolve.png"></div>
+                      </div>
+                      <p class="tagline third">
+                        <a href="/our-process/evolve/">
+                          <span class="title closed">Evolve</span>
+                          <span class="title open">Learn More About Evolution Services</span>
+                          <span class="subtitle">Maintenance <span>+</span> Growth</span>
+                        </a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="circle-expander">
+                  <span class="bg"></span>
+                  <div class="title-overlay"></div>
+                  <a href="#" class="close-btn">Close</a>
+                  <div class="expander-nav">
+                    <a href="#" class="discover">Discover</a>
+                    <a href="#" class="create">Create</a>
+                    <a href="#" class="evolve">Evolve</a>
+                  </div>
+                </div>
+              </div>
+            
+          </ul>
+    </section>
+    
+    <footer id="footer" class="p_r">
+        <div class="area">
+            <button class="btn_top p_a" type="button">TOP</button>
+            <div><img src="../../images/layout/logoWhite.png" alt=""></div>
+            <address>
+                <span>서울특별시 금천구 시흥동</span>
+                <span>TEL 010-3708-7312</span>
+                <span>FAX 없음</span>
+            </address>
+            <p>본사이트의 모든 콘텐츠는 저작권법의 보호를 받는바, 무단 전재, 복사, 배포 등을 금합니다.</p>
+            <p>Copyrights (c) 2020 Harim.Kang all Rights Reserved.</p>
+            <div class="counter">
+                <strong>Total : </strong><span>19260</span>
+                <strong>Today : </strong><span> 36</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
