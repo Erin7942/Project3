@@ -307,8 +307,11 @@ transition: transform 0.5s => transition: none
     width: 100%;
     height: auto;
     background: #03090a;
-    ul h2{
-        text-align: center; font-size: 2rem; font-weight: 200; padding-top: 100px;color: #fff; letter-spacing: 0.05rem;
+    .circle_ani h2{
+        position: absolute;
+        width: 100%;
+        top: 117px;
+        text-align: center; font-size: 2rem; font-weight: 200; color: #fff; letter-spacing: 0.05rem;
     }
    /*  .circle_ani {
       /* overflow: hidden; 
@@ -347,42 +350,45 @@ transition: transform 0.5s => transition: none
       }
     } */
 
-    .talent .mask {
-      float: left;
-      overflow: hidden;
-      width: 120px;
+    .circle_ani {
+      /* overflow: hidden; */
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 400px;height: 200px;
+      margin: 0 auto;
+      top: -100px;
     
-      .semiCircleWrapper {
-        height: 240px;
-        margin-left: -120px;
-        overflow: hidden;
-        width: 240px;
-        transform: rotate(0deg);
-        
-      }
-      .semiCircleWrapper {
-        margin-left: 0;
-        margin-right: -120px;
-        transform: rotate(-180deg);
-      }
-    
-      .semiCircle {
-        overflow: hidden;
-        width: 120px;
-        .semiCircleInner {
-          border: 20px solid hotpink;
-          border-radius: 50%;
-          height: 200px;
-          width: 200px;
+      svg {
+        height: 400px;
+        width: 400px;
+        &:nth-child(1){}
+        &:nth-child(2){
+          transform: scaleX(-1) translateX(50%) translateY(-50%); /* point */
+          position: absolute;top: 50%;left: 50%;
+        }
+        circle {
+          fill: none;
+          stroke: #ffffff;
+          stroke-width: 0.5px;
+          animation: load 1s linear alternate forwards;
+        }
+        .outer {
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+        }
+        .inner {
+          stroke-dasharray: 475;
+          stroke-dashoffset: 475;
+          animation-delay: 1s;
         }
       }
-    
     }
-
 }
 
 /* contents project */
-#content .talent{
+#content {
     
   .row {
     max-width: 1200px;
@@ -861,13 +867,6 @@ transition: transform 0.5s => transition: none
     0%{width: 0;}
     100%{width: 200px;}
   }
-
-@keyframes load {
-  0% {
-    stroke-dashoffset:600;
-  }
-
-  100% {
-    stroke-dashoffset: 350;
-  }
-}
+    @keyframes load {
+      100% {stroke-dashoffset: 350;}
+    }

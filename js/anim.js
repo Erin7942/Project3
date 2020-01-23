@@ -55,10 +55,9 @@ $(document).ready(function() {
 //getTotalLength()로 길이 확인함
 window.onload = function () {
   var size1 = document.querySelector('.outer').getTotalLength();
-  var size2 = document.querySelector('.outer2').getTotalLength();
+  var size2 = document.querySelector('.inner').getTotalLength();
   console.log(size1, size2); //282.2865905761719
 }
-
 
 // content 관련 스크립트
 var HeroCircles = function(el) {
