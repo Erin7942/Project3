@@ -32,3 +32,7 @@
     -moz-border-radius: $value;
     border-radius: $value;
 }
+
+@mixin bgcover($value...) {
+    -webkit-background-size: $value !important;
+    background-size: $value !important;}

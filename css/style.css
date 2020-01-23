@@ -741,6 +741,20 @@ transition: transform 0.5s => transition: none
 /* 3번째 profile */
 #content .profile3 {
   background-color: white; }
+  #content .profile3 h3 {
+    font-size: 3vw;
+    text-align: center; }
+  #content .profile3 img {
+    -webkit-background-size: !important;
+    background-size: !important; }
+  #content .profile3 span {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 300;
+    font-family: SCDream;
+    margin-left: 200px;
+    line-height: 1.5em;
+    letter-spacing: 0.04em; }
 
 #footer {
   background: #3b3b3b;
