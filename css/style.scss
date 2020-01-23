@@ -680,7 +680,12 @@ transition: transform 0.5s => transition: none
   @media only screen and (max-width: 840px) { font-size: 18px; }
 }
 }
-
+/* 3번째 profile */
+#content{
+  .profile3{
+    background-color: white;
+  }
+}
 
 #footer{
   background: #3b3b3b;font-size: 14px;color: #fff;text-align: center;padding: 40px 0;

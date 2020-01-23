@@ -738,6 +738,10 @@ transition: transform 0.5s => transition: none
     #content .hero-subtitle {
       font-size: 18px; } }
 
+/* 3번째 profile */
+#content .profile3 {
+  background-color: white; }
+
 #footer {
   background: #3b3b3b;
   font-size: 14px;
