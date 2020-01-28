@@ -93,6 +93,7 @@ transition: transform 0.5s => transition: none
     &.active{height: 200;}
     &.scroll{@include boxShadow(0px 10px 10px rgba(0,0,0,.2));}
 
+    
     .wide{
         @include borderBox;
         width: 90%;max-width: 1760px;margin: 0 auto;
@@ -358,13 +359,13 @@ transition: transform 0.5s => transition: none
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 400px;height: 200px;
+      width: 100px;height: 200px;
       margin: 0 auto;
       top: -100px;
     
       svg {
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         &:nth-child(1){}
         &:nth-child(2){
           transform: scaleX(-1) translateX(50%) translateY(-50%); /* point */
@@ -693,10 +694,62 @@ transition: transform 0.5s => transition: none
     span{
       display: inline-block;
       font-size: 1.7rem; font-weight: 300; font-family: SCDream;
-      margin-left: 200px; line-height: 1.5em; letter-spacing: 0.04em;
+      line-height: 1.5em; letter-spacing: 0.04em; margin: 4rem 5rem 4rem 13rem; 
+    }
+    //3) 1260이하
+    @media all and (max-width: 1260px) {
+      position: absolute;
+      left: 0px;
+      h3{
+        font-size: 3vw; text-align: center;
+      }
+      img{
+        @include bgcover;
+      }
+      background-color: white;
+    }
+    //3) 760이하
+    @media all and (max-width: 760px) {
+      left: 0px;
+      h3{
+        font-size: 8vw; text-align: center;
+      }
+      img{
+        @include bgcover;
+      }
+      background-color: white;
+    }
+        //6) 640이하
+    @media all and (max-width: 640px) {
+      left: 0px;
+      h3{
+        font-size: 8vw; text-align: center;
+      }
+      background-color: white;
+      span{
+        display: inline-block;
+        font-size: 1.3rem; font-weight: 300; font-family: SCDream;
+        line-height: 1.5em; letter-spacing: 0.04em; margin: 4rem 5rem 4rem 10rem; 
+      }
+    }
+
+    //7) 480이하
+    @media all and (max-width: 480px) {
+      left: 0px;
+      h3{
+        font-size: 7vw; text-align: center;
+      }
+      background-color: white;
+      span{
+        display: inline-block;
+        font-size: 1rem; font-weight: 300; font-family: SCDream;
+        line-height: 1.5em; letter-spacing: 0.06em; margin: 2rem 5rem 2rem 6rem; 
+      }
     }
   }
 }
+
+
 
 #footer{
   background: #3b3b3b;font-size: 14px;color: #fff;text-align: center;padding: 40px 0;
@@ -764,12 +817,15 @@ transition: transform 0.5s => transition: none
     #gnb{
         @include transition(none); /* 모바일 에서는 제거 */
         @include borderBox;
-        position: fixed !important;left: 100%;right: 0;text-align: left;color: #666;background: #fff;z-index: 970;width: 50%;height: 100%;overflow-y: auto;min-width: 280px;padding: 130px 50px 10px;margin-left: 0;
+        position: fixed !important;left: 100%;right: 0;text-align: left;color: #ffffff;background: #000000;z-index: 970;width: 50%;height: 100%;overflow-y: auto;min-width: 280px;padding: 130px 50px 10px;margin-left: 0;
        
        > ul{
-           display: block;
+           display: block; 
            > li{
-               float: none;border-bottom: 1px solid #e2e2e2;
+               float: none;
+               &:hover {
+                color: $mblue;
+              }
                > a{height: 50px;line-height: 50px;padding: 0 0 0 20px;}
             }
         }
@@ -849,28 +905,458 @@ transition: transform 0.5s => transition: none
             h2{font-size: 2.4rem;}
         }
     }
+}
+//태양계
+.box{
+  position: relative;
+  left: 35%;
+	width: 500px;
+  height: 700px; 
+  top: 0px;
+  margin-top: 100px;
+  .cls-1 {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 1px; 
+    transform:scale(0);
+    transform-origin:50% 50%;  
+    animation:cirScale 0.2s ease-in-out forwards;   
+  }  
+  .cls-2 {
+    fill: #fff;
+    fill-rule: evenodd;
+  } 
+  #icon-w{
+    background:#00bd0c;
+    color:#fff;
+    width: 100px;
+    height: 100px;
+    line-height:100px;
+    text-align:center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    border-radius:50%; 
+    display: flex;
+    display:-webkit-flex;
+    justify-content:center;
+    align-items:center; 
+    transform: scale(0);
+    animation:icon-w 0.4s ease-in-out forwards 0.5s;
+  } 
+  .icons{
+    @include abs-pos(0,0,0,0); 
+    margin: auto; 
+    .icon{ 
+      @include abs-pos(0,0,0,0); 
+      text-align:center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;  
+      transition:all ease-in-out 0.5s;  
+      div{
+        transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+        text-align: center;
+        span{ 
+          border-radius:50%;
+          display: inline-block; 
+        }
+        h3{
+          margin-top: 0;
+          opacity: 0;  
+          color:$basicColor;
+          font-weight:normal;
+          animation: h3Opacity 0.3s ease-in-out forwards 3s; 
+        }       
+      } 
+      &:nth-child(1),&:nth-child(2){
+        animation-duration:2.4s;
+        animation-delay:0.6s;
+        div{ 
+          animation-duration:2.4s;
+          animation-delay:0.6s;
+        }
+      }
+      &:nth-child(3),&:nth-child(4){
+        animation-duration:2s;
+        animation-delay:1s;
+        div{ 
+          animation-duration:2s;
+          animation-delay:1s;
+        }
+      }
+      &:nth-child(5),&:nth-child(6),&:nth-child(7){
+        animation-duration:1.5s;
+        animation-delay:1.4s;
+        div{ 
+          animation-duration:1.5s;
+          animation-delay:1.4s;
+        }
+      }
+    }
+  }
+} 
+@each $v in $shapes{
+  .icon-#{$v} span{
+    width:#{$v*1.1}px;
+    height:#{$v*1.1}px; 
+  }
+}
+.icon-90{
+	h3{font-weight:bold}
+	&:nth-child(2){
+		min-width: 240px;
+	}
+}
+@for $i from 1 through 7{
+  @if $i < 5{ 
+    .icon:nth-child(#{$i}) span{
+      
+    }
+  } @else{
+    .icon:nth-child(#{$i}) span{
+      
+    }
+  }
+  .box{
+		.icon:nth-child(#{$i}){
+			animation: bouncePar#{$i} ease-in-out forwards; 
+			div{
+				transform:translate3d(0,0,0)  scale(0) rotate(0);
+				animation: bounceChild#{$i} ease-in-out forwards; 
+			}
+	  }
+  } 
+}  
+// 태양계 1260이하
+@media all and (max-width: 1260px) 
+{
+  .box{
+    position: relative;
+    left: 35%;
+    width: 500px;
+    height: 700px; 
+    // top: 100%;
+    margin-top: 700px; 
+  } 
+  @each $v in $shapes{
+    .icon-#{$v} span{
+      width:#{$v*1.1}px;
+      height:#{$v*1.1}px; 
+    }
+  }
+  @for $i from 1 through 7{
+    .box{
+      .icon:nth-child(#{$i}){
+        animation: bouncePar#{$i} ease-in-out forwards; 
+        div{
+          transform:translate3d(0,0,0)  scale(0) rotate(0);
+          animation: bounceChild#{$i} ease-in-out forwards; 
+        }
+      }
+    } 
+  } 
+}
+// 태양계 760px 이하
+@media all and (max-width: 760px) 
+{
+  .box{
+    max-width: 80%;
+    position: relative;
+    left: 10%;
+    width: 500px;
+    height: 800px; 
+    margin-top: 200px;
+    top:100px;
+    text-align: center;
+ } 
+  @each $v in $shapes{
+    .icon-#{$v} span{
+      width:#{$v*0.8}px;
+      height:#{$v*0.8}px; 
+    }
+  }
+  @for $i from 1 through 7{
+    .box{
+      .icon:nth-child(#{$i}){
+        position: relative;
+        left: 250px;
+        top: 410px;
+        width: 0px;
+        height: 0px;
+        animation: bouncePar#{$i} ease-in-out forwards; 
+        div{
+           transform:translate3d(0,0,0)  scale(0) rotate(0);
+          animation: bounceChild#{$i} ease-in-out forwards infinite; 
+        }
+      }
+    } 
+  }  
+}
+// 태양계 480px 이하
+@media all and (max-width: 480px) 
+{
+  .box{
+    max-width: 80%;
+    position: relative;
+    left: 8%;
+    width: 500px;
+    height: 800px; 
+    margin-top: 0px;
+    top:100px;
+    text-align: center;
+ } 
+  @each $v in $shapes{
+    .icon-#{$v} span{
+      width:#{$v*0.45}px;
+      height:#{$v*0.45}px; 
+    }
+  }
+  @for $i from 1 through 7{
+    .box{
+      .icon:nth-child(#{$i}){
+        position: relative;
+        left: 130px;
+        top: 410px;
+        width: 0px;
+        height: 0px;
+        animation: bouncePar#{$i} ease-in-out forwards; 
+        div{
+           transform:translate3d(0,0,0)  scale(0) rotate(0);
+          animation: bounceChild#{$i} ease-in-out forwards; 
+        }
+      }
+    } 
+  }  
+}
+//chart anim
+#chart-anim{ padding-bottom: 550px; position: relative; top: 0px; margin-top: 10px;}
+//chart anim 1260이하
+@media all and (max-width: 1260px) 
+{
+  #chart-anim{ padding-bottom: 950px; position: relative; top: 0px; margin-top: 10px;}
+}
+//chart anim 760이하
+@media all and (max-width: 760px) 
+{
+  #chart-anim{ padding-bottom: 1650px; position: relative; top: 0px; margin-top: 10px;}
+}
+.card {
+  position: relative;
+  float: left;
+  width: 280px;
+  padding: 30px 30px 0 30px;
+  box-sizing: border-box;
+  border-radius: 0.2em;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: none;
+  transition: none;
+  z-index: 100;
 
-    /* sub 인재채용 : 인재상 */
-// .talent{
-//     li{
-//         position: relative;height: auto;padding: 20px 0;
-//         > div{float: none;}
-//         .txtbox{
-//             width: calc(100% - 135px);background: yellow;
-//             h4{
-//                 @include bgSize(auto 35px);
-//                 padding-top: 10px;padding-left: 45px;background: no-repeat left top;font-size: 1.75rem;margin-bottom: 10px;
-//             }
-//         }
-//         .img{
-//             @include transform(translateY(-50%));
-//             position: absolute;top: 50%;right: 0;width: 30%;max-width: 135px;
-//         }
-//     }
-// }
 }
 
+.card * {
+  -webkit-transition: none;
+  transition: none;
+}
 
+.card h3 {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  z-index: 100;
+}
+
+.card .chart-legend {
+  position: relative;
+  float: left;
+  margin-top: 30px;
+  margin-left: -30px;
+  width: calc(100% + 60px);
+  padding: 7px 30px 5px 30px;
+  border-radius: 0 0 0.2em 0.2em;
+}
+
+.card .chart-legend h3,
+.card .chart-legend p {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.card .chart {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card.line .chart {
+  overflow: visible;
+}
+/* COLOURS */
+
+.card.bg,
+.card .bg {
+  background: #03090a;
+  color: #111;
+}
+
+.card.line canvas {
+  border-color: #333;
+}
+
+.card.line-only canvas,
+.card.quote p,
+.card.quote p:before {
+  border-color: #5CA8A6;
+}
+
+.card .chart-legend,
+.card.list li:before,
+.card .bar-chart .bar:nth-child(4),
+.card .column-chart .column:nth-child(4),
+.card .stacked-column-chart .col-part:nth-child(1) {
+  background-color: #5CA8A6;
+  color: #fff;
+  z-index: 4;
+}
+
+.card .ring-chart .ring-fill {
+  border-color: #79D0CE;
+}
+
+.card .ring-chart .circle .mask .fill,
+.card.ring .chart-legend p:nth-child(1):before,
+.card .bar-chart .bar:nth-child(3),
+.card .column-chart .column:nth-child(3),
+.card .stacked-column-chart .col-part:nth-child(2) {
+  background-color: #79D0CE;
+  color: #fff;
+  z-index: 3;
+}
+
+.card .ring-chart.small .ring-fill {
+  border-color: #BBDDDB;
+}
+
+.card .bar-chart .bar:nth-child(2),
+.card .column-chart .column:nth-child(2),
+.card .ring-chart.small .circle .mask .fill,
+.card.ring .chart-legend p:nth-child(2):before,
+.card .stacked-column-chart .col-part:nth-child(3) {
+  background-color: #BBDDDB;
+  color: #fff;
+  z-index: 2;
+}
+
+.card .ring-chart.mini .ring-fill {
+  border-color: #DBEEED;
+}
+
+.card .bar-chart .bar:nth-child(1),
+.card .column-chart .column:nth-child(1),
+.card .ring-chart.mini .circle .mask .fill,
+.card.ring .chart-legend p:nth-child(3):before,
+.card .stacked-column-chart .col-part:nth-child(4) {
+  background-color: #DCEFEE;
+  color: #fff;
+  z-index: 1;
+}
+/* RING CHART */
+
+.card .ring-chart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.card .small.ring-chart {
+  position: absolute;
+  top: 19px;
+  left: 19px;
+  width: calc(100% - 38px);
+  height: calc(100% - 38px);
+}
+
+.card .mini.ring-chart {
+  position: absolute;
+  top: 39px;
+  left: 39px;
+  width: calc(100% - 78px);
+  height: calc(100% - 78px);
+}
+
+.card .ring-chart .ring-fill {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: calc(100% - 18px);
+  height: calc(100% - 18px);
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+
+.card .ring-chart .circle .mask,
+.card .ring-chart .circle .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.card.ring .chart-legend p {
+  padding-left: 15px;
+}
+
+.card.ring .chart-legend p:before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  margin-top: 3px;
+  width: 16px;
+  height: 12px;
+  border: 3px solid transparent;
+}
+// astronaut 1,2
+.astronaut
+{
+  animation: astronaut alternate 25s cubic-bezier(0.37, 0.44, 0.53, 0.59) 0s infinite;
+  height: 300px;
+  left: 300px;
+  position: relative;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  z-index: 1000;
+}
+.astronaut2
+{
+  animation: astronaut2 20s infinite;
+  margin-top: 70px;
+}
 // 애니메이션
 @keyframes animate {
     0% {
@@ -889,3 +1375,239 @@ transition: transform 0.5s => transition: none
     @keyframes load {
       100% {stroke-dashoffset: 350;}
     }
+
+@keyframes icon-w{
+  0%{
+    transform:scale(0);
+  }
+  50%{
+    transform:scale(2);
+  }
+  100%{           
+    transform:scale(1);
+  }
+}
+.icon-w.on
+{
+  animation:icon-w 0.4s ease-in-out forwards 0.5s;
+}
+@for $i from 1 through 4{
+ #circle-#{$i}{
+    animation-delay:$i*0.3s;
+  }
+}
+
+@keyframes cirScale{
+  0%{
+    transform:scale(0);
+  } 
+  100%{           
+    transform:scale(1);
+  }
+}
+.cls-1.on{
+  animation:cirScale 0.2s ease-in-out forwards;   
+}
+@keyframes bouncePar1{
+  0%,30%{ 
+            transform:rotate(50deg)  ;
+  } 
+  100% { 
+            transform:rotate(420deg) ;
+	}
+} 
+@keyframes bounceChild1{
+  0% { 
+            transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+            transform:translate3d(0,190%,0) scale(1.5) rotate(-50deg) ;
+  }
+  30%{ 
+            transform:translate3d(0,190%,0) scale(1) rotate(-50deg) ;
+  } 
+  100%{
+  	transform:translate3d(0,190%,0) scale(1) rotate(-420deg) ;
+  }
+} 
+@keyframes bouncePar2{
+  0%,30%{ 
+            transform:rotate(60deg)  ;
+  } 
+  100% { 
+            transform:rotate(400deg) ;
+	}
+} 
+@keyframes bounceChild2{
+  0% { 
+            transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+            transform:translate3d(0,-180%,0) scale(1.5) rotate(-60deg) ;
+  }
+  30% { 
+            transform:translate3d(0,-180%,0) scale(1) rotate(-60deg) ;
+  } 
+  100%{
+  	transform:translate3d(0,-180%,0) scale(1) rotate(-400deg) ;
+  }
+} 
+@keyframes bouncePar3{
+  0%,30%{ 
+            transform:rotate(-10deg)  ;
+  } 
+  100% { 
+            transform:rotate(360deg) ;
+	}
+} 
+@keyframes bounceChild3{
+  0% { 
+            transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+            transform:translate3d(0,-240%,0) scale(1.5) rotate(10deg) ;
+  }
+  30% { 
+            transform:translate3d(0,-240%,0) scale(1) rotate(10deg) ;
+  } 
+  100%{
+  	transform:translate3d(0,-240%,0) scale(1) rotate(-360deg) ;
+  }
+} 
+@keyframes bouncePar4{
+  0%,30%{ 
+            transform:rotate(90deg)  ;
+  } 
+  100% { 
+            transform:rotate(485deg) ;
+	}
+} 
+@keyframes bounceChild4{
+  0% { 
+            transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+            transform:translate3d(0,-210%,0) scale(1.5) rotate(-90deg) ;
+  }
+  30%{ 
+            transform:translate3d(0,-210%,0) scale(1) rotate(-90deg) ;
+  } 
+  100%{
+  	transform:translate3d(0,-210%,0) scale(1) rotate(-485deg) ;
+  }
+} 
+@keyframes bouncePar5{
+  0%,30%{ 
+            transform:rotate(0)  ;
+  } 
+  100% { 
+            transform:rotate(-60deg) ;
+	}
+} 
+@keyframes bounceChild5{
+  0% { 
+            transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+            transform:translate3d(0,-220%,0) scale(1.5) rotate(0) ;
+  }
+  30% { 
+            transform:translate3d(0,-220%,0) scale(1) rotate(0) ;
+  } 
+  100%{
+  	transform:translate3d(0,-220%,0) scale(1) rotate(60deg) ;
+  }
+} 
+@keyframes bouncePar6{
+  0%,30%{ 
+            transform:rotate(0)  ;
+  } 
+  100% { 
+            transform:rotate(80deg) ;
+	}
+} 
+@keyframes bounceChild6{
+  0% { 
+            transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+            transform:translate3d(0,-220%,0) scale(1.5) rotate(0) ;
+  }
+  30%{ 
+            transform:translate3d(0,-220%,0) scale(1) rotate(0) ;
+  } 
+  100%{
+  	transform:translate3d(0,-220%,0) scale(1) rotate(-80deg) ;
+  }
+} 
+@keyframes bouncePar7{
+  0%,30%{ 
+            transform:rotate(0)  ;
+  } 
+  100% { 
+            transform:rotate(-140deg) ;
+	}
+} 
+@keyframes bounceChild7{
+  0% { 
+        transform:translate3d(0,0,0)  scale(0) rotate(0) ;
+  }
+  20%{ 
+        transform:translate3d(0,-220%,0) scale(1.5) rotate(0) ;
+  }
+  30% { 
+        transform:translate3d(0,-220%,0) scale(1) rotate(0) ;
+  } 
+ 100%{
+  		transform:translate3d(0,-220%,0) scale(1) rotate(140deg) ;
+  }
+}
+@keyframes h3Opacity{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn.on {   // 스크롤 애니메이션
+  animation: fadeIn forwards 3s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
+}
+
+@keyframes astronaut {
+  0% {
+    left: -15%;
+    transform: rotate(20deg);
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 0%;
+    transform: rotate(780deg);
+  }
+}
+
+@keyframes astronaut2 {
+
+  0% { transform: rotate(0deg); }
+ 
+  50% { transform: rotate(180deg); }
+ 
+  100% { transform: rotate(360deg); }
+ 
+ }
+ 
+ 
