@@ -698,7 +698,6 @@ transition: transform 0.5s => transition: none
     }
     //3) 1260이하
     @media all and (max-width: 1260px) {
-      position: absolute;
       left: 0px;
       h3{
         font-size: 3vw; text-align: center;
@@ -710,6 +709,7 @@ transition: transform 0.5s => transition: none
     }
     //3) 760이하
     @media all and (max-width: 760px) {
+   
       left: 0px;
       h3{
         font-size: 8vw; text-align: center;
@@ -790,7 +790,7 @@ transition: transform 0.5s => transition: none
 @media all and (max-width: 1260px) {
     .area{
         @include borderBox;
-        width: 100%;padding-left: 30px;padding-right: 30px;
+        width: 100%;
     }
     #header{
         overflow: visible;
@@ -842,8 +842,6 @@ transition: transform 0.5s => transition: none
         line-height: 1.5;
         address span{display: block;}
     }
-    
-    //sub 인재채용 : 인재상
     .talent{
         li{
             float: none;width: 100%;
@@ -854,11 +852,11 @@ transition: transform 0.5s => transition: none
 //5) 760이하 : #gnb padding edit 60, 20, 10px
 @media all and (max-width: 760px) {
     body{font-size: 14px;}
-    .area{padding-left: 15px;padding-right: 15px;}
+
     #header{
         height: 60px;
         .wide{
-            padding-left: 15px;padding-right: 15px;
+
             &:before{top: 59px;left: -15px;right: -15px;}
         }
         .logo{
@@ -920,7 +918,7 @@ transition: transform 0.5s => transition: none
     stroke-width: 1px; 
     transform:scale(0);
     transform-origin:50% 50%;  
-    animation:cirScale 0.2s ease-in-out forwards;   
+    animation:cirScale 0.2s ease-in-out forwards; 
   }  
   .cls-2 {
     fill: #fff;
@@ -1037,9 +1035,6 @@ transition: transform 0.5s => transition: none
   .box{
     position: relative;
     left: 35%;
-    width: 500px;
-    height: 700px; 
-    // top: 100%;
     margin-top: 700px; 
   } 
   @each $v in $shapes{
@@ -1132,17 +1127,19 @@ transition: transform 0.5s => transition: none
     } 
   }  
 }
-//chart anim
-#chart-anim{ padding-bottom: 550px; position: relative; top: 0px; margin-top: 10px;}
-//chart anim 1260이하
-@media all and (max-width: 1260px) 
-{
-  #chart-anim{ padding-bottom: 950px; position: relative; top: 0px; margin-top: 10px;}
-}
-//chart anim 760이하
-@media all and (max-width: 760px) 
-{
-  #chart-anim{ padding-bottom: 1650px; position: relative; top: 0px; margin-top: 10px;}
+
+/* 차트 */
+#chart-anim{
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: auto;
+  .skills h2 {
+    font-size: 3vw; 
+    padding-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: rgb(90, 90, 90);
+  }
 }
 .card {
   position: relative;
@@ -1155,22 +1152,23 @@ transition: transform 0.5s => transition: none
   -webkit-transition: none;
   transition: none;
   z-index: 100;
-
+  margin: 10px;
+  left: 18%;
+  
+  h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    z-index: 100;
+  }
 }
 
 .card * {
   -webkit-transition: none;
   transition: none;
-}
-
-.card h3 {
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 400;
-  color: white;
-  z-index: 100;
 }
 
 .card .chart-legend {
@@ -1207,8 +1205,8 @@ transition: transform 0.5s => transition: none
 
 .card.bg,
 .card .bg {
-  background: #03090a;
-  color: #111;
+  background: #ffffff;
+  color: rgb(255, 255, 255);
 }
 
 .card.line canvas {
@@ -1340,16 +1338,67 @@ transition: transform 0.5s => transition: none
   height: 12px;
   border: 3px solid transparent;
 }
+
+//2) 1760이하
+//ie9미만의 하위브라우저에서 미디어쿼리를 인식할수 있는 respond.min.js파일은 기기타입(유형)이 all 이어야 한다
+@media all and (max-width: 1760px) {
+  .card {
+    margin: 10px;
+    left: 10%;
+    
+    h3 {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 400;
+      color: rgb(0, 0, 0);
+    }
+  }
+}
+@media all and (max-width: 1260px) {
+  #chart-anim .skills h2 {
+    font-size: 8vw; 
+    text-align: center;
+  }
+}
+@media all and (max-width: 960) {
+  #chart-anim .skills h2 {
+    font-size: 8vw; 
+    text-align: center;
+  }
+}
+@media all and (max-width: 760) {
+  #chart-anim .skills h2 {
+    font-size: 8vw; 
+    text-align: center;
+  }
+}
+@media all and (max-width: 640) {
+  #chart-anim .skills h2 {
+    font-size: 8vw; 
+    text-align: center;
+  }
+}
+@media all and (max-width: 480) {
+  #chart-anim 
+  {
+    .skills h2 {
+      font-size: 8vw; 
+      text-align: center;
+    }
+  }
+}
+
 // astronaut 1,2
 .astronaut
 {
   animation: astronaut alternate 25s cubic-bezier(0.37, 0.44, 0.53, 0.59) 0s infinite;
-  height: 300px;
-  left: 300px;
+  height: 400px;
   position: relative;
   top: 35%;
   transform: translate(-50%, -50%);
-  width: 70px;
+  width: 150px;
   z-index: 1000;
 }
 .astronaut2

@@ -757,7 +757,6 @@ transition: transform 0.5s => transition: none
     margin: 4rem 5rem 4rem 13rem; }
   @media all and (max-width: 1260px) {
     #content .profile3 {
-      position: absolute;
       left: 0px;
       background-color: white; }
       #content .profile3 h3 {
@@ -866,9 +865,7 @@ transition: transform 0.5s => transition: none
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px; }
+    width: 100%; }
 
   #header {
     overflow: visible; }
@@ -978,19 +975,12 @@ transition: transform 0.5s => transition: none
   body {
     font-size: 14px; }
 
-  .area {
-    padding-left: 15px;
-    padding-right: 15px; }
-
   #header {
     height: 60px; }
-    #header .wide {
-      padding-left: 15px;
-      padding-right: 15px; }
-      #header .wide:before {
-        top: 59px;
-        left: -15px;
-        right: -15px; }
+    #header .wide:before {
+      top: 59px;
+      left: -15px;
+      right: -15px; }
     #header .logo {
       top: 10px;
       left: 15px; }
@@ -1184,8 +1174,6 @@ transition: transform 0.5s => transition: none
   .box {
     position: relative;
     left: 35%;
-    width: 500px;
-    height: 700px;
     margin-top: 700px; }
 
   .icon-90 span {
@@ -1439,24 +1427,18 @@ transition: transform 0.5s => transition: none
     .box .icon:nth-child(7) div {
       transform: translate3d(0, 0, 0) scale(0) rotate(0);
       animation: bounceChild7 ease-in-out forwards; } }
+/* 차트 */
 #chart-anim {
-  padding-bottom: 550px;
-  position: relative;
-  top: 0px;
-  margin-top: 10px; }
+  background: white;
+  width: 100%;
+  height: auto; }
+  #chart-anim .skills h2 {
+    font-size: 3vw;
+    padding-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #5a5a5a; }
 
-@media all and (max-width: 1260px) {
-  #chart-anim {
-    padding-bottom: 950px;
-    position: relative;
-    top: 0px;
-    margin-top: 10px; } }
-@media all and (max-width: 760px) {
-  #chart-anim {
-    padding-bottom: 1650px;
-    position: relative;
-    top: 0px;
-    margin-top: 10px; } }
 .card {
   position: relative;
   float: left;
@@ -1467,20 +1449,21 @@ transition: transform 0.5s => transition: none
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-transition: none;
   transition: none;
-  z-index: 100; }
+  z-index: 100;
+  margin: 10px;
+  left: 18%; }
+  .card h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+    color: black;
+    z-index: 100; }
 
 .card * {
   -webkit-transition: none;
   transition: none; }
-
-.card h3 {
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 400;
-  color: white;
-  z-index: 100; }
 
 .card .chart-legend {
   position: relative;
@@ -1512,8 +1495,8 @@ transition: transform 0.5s => transition: none
 /* COLOURS */
 .card.bg,
 .card .bg {
-  background: #03090a;
-  color: #111; }
+  background: #ffffff;
+  color: white; }
 
 .card.line canvas {
   border-color: #333; }
@@ -1629,14 +1612,44 @@ transition: transform 0.5s => transition: none
   height: 12px;
   border: 3px solid transparent; }
 
+@media all and (max-width: 1760px) {
+  .card {
+    margin: 10px;
+    left: 10%; }
+    .card h3 {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 400;
+      color: black; } }
+@media all and (max-width: 1260px) {
+  #chart-anim .skills h2 {
+    font-size: 8vw;
+    text-align: center; } }
+@media all and (max-width: 960) {
+  #chart-anim .skills h2 {
+    font-size: 8vw;
+    text-align: center; } }
+@media all and (max-width: 760) {
+  #chart-anim .skills h2 {
+    font-size: 8vw;
+    text-align: center; } }
+@media all and (max-width: 640) {
+  #chart-anim .skills h2 {
+    font-size: 8vw;
+    text-align: center; } }
+@media all and (max-width: 480) {
+  #chart-anim .skills h2 {
+    font-size: 8vw;
+    text-align: center; } }
 .astronaut {
   animation: astronaut alternate 25s cubic-bezier(0.37, 0.44, 0.53, 0.59) 0s infinite;
-  height: 300px;
-  left: 300px;
+  height: 400px;
   position: relative;
   top: 35%;
   transform: translate(-50%, -50%);
-  width: 70px;
+  width: 150px;
   z-index: 1000; }
 
 .astronaut2 {
