@@ -316,42 +316,6 @@ transition: transform 0.5s => transition: none
         top: 140px;
         text-align: center; font-size: 2rem; font-weight: 200; color: #fff; letter-spacing: 0.05rem;
     }
-   /*  .circle_ani {
-      /* overflow: hidden; 
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width:400px;height: 400px;
-
-      svg {
-        height: 400px;
-        width: 400px;
-        border: 1px solid rgb(255, 255, 255);
-
-        &:nth-child(1){
-      
-        }
-        &:nth-child(2){
-          transform: scaleX(-1); /* point 
-          position: absolute;top: 0;left: 0;
-        }
-        circle {
-          fill: none;
-          stroke: #ffffff;
-          stroke-width: 2px;
-          stroke-dasharray: 490;
-          stroke-dashoffset: 490;
-          animation: load 1s linear alternate forwards;
-        }
-        .outer {
-          animation-delay: 0s;
-        }
-        .outer2 {
-          animation-delay: 1s;
-        }
-      }
-    } */
 
     .circle_ani {
       /* overflow: hidden; */
@@ -359,7 +323,7 @@ transition: transform 0.5s => transition: none
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100px;height: 200px;
+      width: 400px;height: 200px; //edit width
       margin: 0 auto;
       top: -100px;
     
@@ -388,6 +352,21 @@ transition: transform 0.5s => transition: none
         }
       }
     }
+}
+@media only screen and (max-width: 760px){
+  #content {
+    .circle_ani h2{
+      top: 200px;
+    }
+    .circle_ani svg{
+      &:nth-child(1){padding-top: 30px;}
+      &:nth-child(2){
+        position: absolute;top: 100%;left: 49%;
+      }
+    }
+  }
+
+  
 }
 
 /* section project modal */
@@ -918,8 +897,10 @@ transition: transform 0.5s => transition: none
     stroke-width: 1px; 
     transform:scale(0);
     transform-origin:50% 50%;  
-    animation:cirScale 0.2s ease-in-out forwards; 
-  }  
+  } 
+  &.on .cls-1{
+    animation:cirScale 0.2s ease-in-out forwards;
+  }
   .cls-2 {
     fill: #fff;
     fill-rule: evenodd;
@@ -942,7 +923,9 @@ transition: transform 0.5s => transition: none
     justify-content:center;
     align-items:center; 
     transform: scale(0);
-    animation:icon-w 0.4s ease-in-out forwards 0.5s;
+    @at-root .cls-1.on #icon-w{
+      animation:icon-w 0.4s ease-in-out forwards 0.5s;
+    }
   } 
   .icons{
     @include abs-pos(0,0,0,0); 
@@ -967,31 +950,33 @@ transition: transform 0.5s => transition: none
           opacity: 0;  
           color:$basicColor;
           font-weight:normal;
-          animation: h3Opacity 0.3s ease-in-out forwards 3s; 
+          @at-root .icons.on .icon div h3{
+            animation: h3Opacity 0.3s ease-in-out forwards 3s; 
+          }
         }       
       } 
       &:nth-child(1),&:nth-child(2){
-        animation-duration:2.4s;
-        animation-delay:0.6s;
+        animation-duration:2.4s !important;
+        animation-delay:0.6s !important;
         div{ 
-          animation-duration:2.4s;
-          animation-delay:0.6s;
+          animation-duration:2.4s !important;
+          animation-delay:0.6s !important;
         }
       }
       &:nth-child(3),&:nth-child(4){
-        animation-duration:2s;
-        animation-delay:1s;
+        animation-duration:2s !important;
+        animation-delay:1s !important;
         div{ 
-          animation-duration:2s;
-          animation-delay:1s;
+          animation-duration:2s !important;
+          animation-delay:1s !important;
         }
       }
       &:nth-child(5),&:nth-child(6),&:nth-child(7){
-        animation-duration:1.5s;
-        animation-delay:1.4s;
+        animation-duration:1.5s !important;
+        animation-delay:1.4s !important;
         div{ 
-          animation-duration:1.5s;
-          animation-delay:1.4s;
+          animation-duration:1.5s !important;
+          animation-delay:1.4s !important;
         }
       }
     }
@@ -1021,9 +1006,15 @@ transition: transform 0.5s => transition: none
   }
   .box{
 		.icon:nth-child(#{$i}){
-			animation: bouncePar#{$i} ease-in-out forwards; 
 			div{
 				transform:translate3d(0,0,0)  scale(0) rotate(0);
+			}
+	  }
+  } 
+  .box.on{
+		.icon:nth-child(#{$i}){
+			animation: bouncePar#{$i} ease-in-out forwards; 
+			div{
 				animation: bounceChild#{$i} ease-in-out forwards; 
 			}
 	  }
@@ -1454,9 +1445,9 @@ transition: transform 0.5s => transition: none
     transform:scale(1);
   }
 }
-.cls-1.on{
+/* .cls-1.on{
   animation:cirScale 0.2s ease-in-out forwards;   
-}
+} */
 @keyframes bouncePar1{
   0%,30%{ 
             transform:rotate(50deg)  ;

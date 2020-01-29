@@ -385,43 +385,7 @@ transition: transform 0.5s => transition: none
 #content {
   width: 100%;
   height: auto;
-  background: #03090a;
-   /*  .circle_ani {
-      /* overflow: hidden; 
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width:400px;height: 400px;
-
-      svg {
-        height: 400px;
-        width: 400px;
-        border: 1px solid rgb(255, 255, 255);
-
-        &:nth-child(1){
-      
-        }
-        &:nth-child(2){
-          transform: scaleX(-1); /* point 
-          position: absolute;top: 0;left: 0;
-        }
-        circle {
-          fill: none;
-          stroke: #ffffff;
-          stroke-width: 2px;
-          stroke-dasharray: 490;
-          stroke-dashoffset: 490;
-          animation: load 1s linear alternate forwards;
-        }
-        .outer {
-          animation-delay: 0s;
-        }
-        .outer2 {
-          animation-delay: 1s;
-        }
-      }
-    } */ }
+  background: #03090a; }
   #content .circle_ani h2 {
     position: absolute;
     width: 100%;
@@ -437,7 +401,7 @@ transition: transform 0.5s => transition: none
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: 400px;
     height: 200px;
     margin: 0 auto;
     top: -100px; }
@@ -463,6 +427,15 @@ transition: transform 0.5s => transition: none
         stroke-dashoffset: 475;
         animation-delay: 1s; }
 
+@media only screen and (max-width: 760px) {
+  #content .circle_ani h2 {
+    top: 200px; }
+  #content .circle_ani svg:nth-child(1) {
+    padding-top: 30px; }
+  #content .circle_ani svg:nth-child(2) {
+    position: absolute;
+    top: 100%;
+    left: 49%; } }
 /* section project modal */
 #content .row {
   max-width: 1200px;
@@ -1037,7 +1010,8 @@ transition: transform 0.5s => transition: none
     stroke: #ddd;
     stroke-width: 1px;
     transform: scale(0);
-    transform-origin: 50% 50%;
+    transform-origin: 50% 50%; }
+  .box.on .cls-1 {
     animation: cirScale 0.2s ease-in-out forwards; }
   .box .cls-2 {
     fill: #fff;
@@ -1059,8 +1033,9 @@ transition: transform 0.5s => transition: none
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
-    transform: scale(0);
-    animation: icon-w 0.4s ease-in-out forwards 0.5s; }
+    transform: scale(0); }
+    .cls-1.on #icon-w {
+      animation: icon-w 0.4s ease-in-out forwards 0.5s; }
   .box .icons {
     position: absolute;
     top: 0;
@@ -1090,26 +1065,27 @@ transition: transform 0.5s => transition: none
           margin-top: 0;
           opacity: 0;
           color: #ffffff;
-          font-weight: normal;
-          animation: h3Opacity 0.3s ease-in-out forwards 3s; }
+          font-weight: normal; }
+          .icons.on .icon div h3 {
+            animation: h3Opacity 0.3s ease-in-out forwards 3s; }
       .box .icons .icon:nth-child(1), .box .icons .icon:nth-child(2) {
-        animation-duration: 2.4s;
-        animation-delay: 0.6s; }
+        animation-duration: 2.4s !important;
+        animation-delay: 0.6s !important; }
         .box .icons .icon:nth-child(1) div, .box .icons .icon:nth-child(2) div {
-          animation-duration: 2.4s;
-          animation-delay: 0.6s; }
+          animation-duration: 2.4s !important;
+          animation-delay: 0.6s !important; }
       .box .icons .icon:nth-child(3), .box .icons .icon:nth-child(4) {
-        animation-duration: 2s;
-        animation-delay: 1s; }
+        animation-duration: 2s !important;
+        animation-delay: 1s !important; }
         .box .icons .icon:nth-child(3) div, .box .icons .icon:nth-child(4) div {
-          animation-duration: 2s;
-          animation-delay: 1s; }
+          animation-duration: 2s !important;
+          animation-delay: 1s !important; }
       .box .icons .icon:nth-child(5), .box .icons .icon:nth-child(6), .box .icons .icon:nth-child(7) {
-        animation-duration: 1.5s;
-        animation-delay: 1.4s; }
+        animation-duration: 1.5s !important;
+        animation-delay: 1.4s !important; }
         .box .icons .icon:nth-child(5) div, .box .icons .icon:nth-child(6) div, .box .icons .icon:nth-child(7) div {
-          animation-duration: 1.5s;
-          animation-delay: 1.4s; }
+          animation-duration: 1.5s !important;
+          animation-delay: 1.4s !important; }
 
 .icon-90 span {
   width: 99px;
@@ -1128,46 +1104,60 @@ transition: transform 0.5s => transition: none
 .icon-90:nth-child(2) {
   min-width: 240px; }
 
-.box .icon:nth-child(1) {
+.box .icon:nth-child(1) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(1) {
   animation: bouncePar1 ease-in-out forwards; }
-  .box .icon:nth-child(1) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(1) div {
     animation: bounceChild1 ease-in-out forwards; }
 
-.box .icon:nth-child(2) {
+.box .icon:nth-child(2) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(2) {
   animation: bouncePar2 ease-in-out forwards; }
-  .box .icon:nth-child(2) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(2) div {
     animation: bounceChild2 ease-in-out forwards; }
 
-.box .icon:nth-child(3) {
+.box .icon:nth-child(3) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(3) {
   animation: bouncePar3 ease-in-out forwards; }
-  .box .icon:nth-child(3) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(3) div {
     animation: bounceChild3 ease-in-out forwards; }
 
-.box .icon:nth-child(4) {
+.box .icon:nth-child(4) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(4) {
   animation: bouncePar4 ease-in-out forwards; }
-  .box .icon:nth-child(4) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(4) div {
     animation: bounceChild4 ease-in-out forwards; }
 
-.box .icon:nth-child(5) {
+.box .icon:nth-child(5) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(5) {
   animation: bouncePar5 ease-in-out forwards; }
-  .box .icon:nth-child(5) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(5) div {
     animation: bounceChild5 ease-in-out forwards; }
 
-.box .icon:nth-child(6) {
+.box .icon:nth-child(6) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(6) {
   animation: bouncePar6 ease-in-out forwards; }
-  .box .icon:nth-child(6) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(6) div {
     animation: bounceChild6 ease-in-out forwards; }
 
-.box .icon:nth-child(7) {
+.box .icon:nth-child(7) div {
+  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+
+.box.on .icon:nth-child(7) {
   animation: bouncePar7 ease-in-out forwards; }
-  .box .icon:nth-child(7) div {
-    transform: translate3d(0, 0, 0) scale(0) rotate(0);
+  .box.on .icon:nth-child(7) div {
     animation: bounceChild7 ease-in-out forwards; }
 
 @media all and (max-width: 1260px) {
@@ -1698,9 +1688,9 @@ transition: transform 0.5s => transition: none
     transform: scale(0); }
   100% {
     transform: scale(1); } }
-.cls-1.on {
-  animation: cirScale 0.2s ease-in-out forwards; }
-
+/* .cls-1.on{
+  animation:cirScale 0.2s ease-in-out forwards;   
+} */
 @keyframes bouncePar1 {
   0%,30% {
     transform: rotate(50deg); }
