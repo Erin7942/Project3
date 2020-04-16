@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko" class="has-horz-post">
+<head>
+  <meta charset="UTF-8">
+  <title>포트폴리오_index</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/template.css">
+
+    <!-- 반짝이는 별 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script  src="js/star.js"></script>
+</head>
+
+<body>
+<header class="page-header">
+  <a href="index.html"><img class="site-title" src="images/layout/logoWhite.png"> </a>
+  <button id="js-toggle-reading-mode" class="toggle-reading-mode">&#x2630;</button>
+</header>
+
+<article class="post" id="post">
+  <h1>Project1. MERCEDES BENZ AMG PAGE</h1>
+  <h2>OVERVIEW</h2>
+  <p>스포츠 자동차 라인으로써 미래적인 디자인으로 제작하였습니다.</p>
+  <img src="images/contents/AMG_PC1.png" alt="amg_image">
+
+  <h2>Color & Typography</h2>
+  <img src="images/contents/color.png" alt="">
+  <p>#b91616 Red를 포인트 색상으로 사용하여 강렬하게 한눈에 들어올 수 있도록 하였습니다. 배경은 어두운 색을 사용하여 동영상 및 사진에 있는 강렬한 색상들이 더욱 신비롭고 강렬해 보일 수 있도록 도와줍니다. </p>
+  <h2>Use Typography</h2>
+  <p>Century Gothic / Audrey / 에스코어드림</p>
+  <img src="images/contents/persona.png" alt="target">
+  <p><img src="images/contents/amg_car.jpg"alt="Car"></p>
+  <h2>Web Accessibility</h2>
+  <img src="images/contents/benz_css1.png" alt="css검사">
+  <h3>Perceivable</h3>
+  <p> - 콘텐츠 간의 구분 : 공백 문자로 단어가 분리된 경우는 CSS 의 글자간격 letter-spacing을 사용한다.<br></p>
+  <h3>Robust</h3>
+  <p>  
+    - 마크업 오류 방지 : 마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다.<br>
+    - 콘텐츠를 개발하는 과정에서 마크업 언어의 표준을 준수하고 가능한 한 문법적 오류나 모호성이 없도록 구현되어야 한다.<br>
+  </p>
+  <!-- <h2>Lorem ipsum.</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor incidunt, tenetur? Aperiam iusto commodi laborum sit debitis officiis fugit esse voluptatibus! Possimus vero fugiat porro veritatis, deleniti sapiente facilis nesciunt cupiditate quia architecto repudiandae enim blanditiis accusantium, deserunt quae consequatur saepe. Doloribus, molestiae.</p>
+  <pre><code class="language-js">define('meh', 
+  ['jquery'], 
+function ($) {
+  'use strict';
+  return $(document).addClass('my-class');
+});</code></pre>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni voluptatibus voluptate aut, atque sequi necessitatibus mollitia, obcaecati ipsa repellat quidem, aliquid quasi minima voluptas? Pariatur fugit porro autem, molestiae, enim sit incidunt! Earum eum quo quasi amet quis natus obcaecati esse, debitis neque minus voluptas. Nostrum voluptatum nam odio natus eligendi illo quasi alias, reiciendis distinctio quis nihil id, quos, laboriosam sit assumenda ullam atque esse.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur voluptas eveniet ullam porro iste. Quasi sed, voluptas corporis rem qui est labore itaque maiores blanditiis fugiat.</p>
+  <h4>Lorem ipsum dolor.</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis molestiae itaque, nulla deserunt possimus, excepturi esse consectetur quos provident distinctio necessitatibus nihil error vitae quod cupiditate. Unde perspiciatis corporis minima dolore in consectetur quos tempora, esse eius voluptatibus cum, velit magnam. Ipsum necessitatibus, maxime odit cupiditate quisquam fugiat numquam blanditiis, distinctio ullam.</p> -->
+</article>
+
+
+<!-- trans -->
+<div class="scroll" data-scroll>
+
+  <nav class="filter">
+    <ul class="filter__list">
+      <li class="filter__item">
+        <a href="template2.html" class="filter__link is-active">
+          <div class="filter__link-mask" area-hidden><span>Project1</span></div>
+          Project1
+        </a>   
+      </li>
+      <li class="filter__item">
+        <a href="template.html" class="filter__link">
+          <div class="filter__link-mask" area-hidden><span>Project2</span></div>
+          Project2
+        </a>   
+      </li>
+      <li class="filter__item">
+        <a href="#" class="filter__link">
+          <div class="filter__link-mask" area-hidden><span>Project3</span></div>
+          Project3
+        </a>   
+      </li>
+    </ul>
+  </nav>
+
+    <div class="" data-scroll-content>  
+    </div>    
+  </div>
+  <div class="mask js-mask">
+    <div class="mask__slice js-mask__slice"></div>
+    <div class="mask__slice js-mask__slice"></div>
+    <div class="mask__slice js-mask__slice"></div>
+    <div class="mask__inner">
+      <figure class="logo logo--mask">
+        <img class="js-logo" src="images/layout/logoWhite.png">
+      </figure>
+      <div class="mask-line js-mask-line">
+        <div class="mask-line__inner js-mask-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js'></script>
+  <script  src="js/script.js"></script>
+  <!-- trans -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
+  <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+  <script src="js/trans.js"></script> 
+</body>
+</html>

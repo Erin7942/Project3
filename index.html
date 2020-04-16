@@ -25,6 +25,8 @@
 
     <script src="js/animation.js"></script>
 
+
+
 </head>
 <body data-depth-one="5" data-depth-two="1">
     <div id="skip">
@@ -98,14 +100,16 @@
     <section id="content" class="area">
         <h3 class="sr-only">project</h3>
         <div class="talent clearfix">
-            <div class="circle_ani">
+            <div class="projectContent">
               <h2>PROJECT</h2>
-              <svg viewBox="0,0,101,101" class="svg1 ">
-                <circle class="outer" cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg viewBox="0,0,101,101" class="svg2">
-              <circle class="inner" cx="50" cy="50" r="40"></circle>
-            </svg>
+              <div class="projectCircleAnim fade">
+                <svg viewBox="0,0,101,101" >
+                  <circle class="outer" cx="50" cy="50" r="50"></circle>
+                </svg>
+                <svg viewBox="0,0,101,101">
+                  <circle class="inner" cx="50" cy="50" r="40"></circle>
+                </svg>
+              </div>
           </div>
         </div>  
         <!-- project 아래 modal -->
@@ -160,8 +164,8 @@
               <a href="#" class="close-btn">Close</a>
               <div class="expander-nav">
                 <a href="#" class="discover">Discover</a>
-                <a href="#" class="create">Create</a>
-                <a href="#" class="evolve">Evolve</a>
+                <a href="template.html" class="create">Create</a>
+                <a href="https://erin7942.github.io/project_benz/amg/amg.html" class="evolve">Evolve</a>
               </div>
             </div>
         </div>
@@ -266,19 +270,16 @@
           </div>
         </div>
       </div>
-      <div class="astronaut">
-        <img src="images/contents/astronut.png" alt=""> 
-      </div>
       <img src="images/contents/moon_2.png" alt="달">
-    </div>
 
 <!-- 태양계 Chart -->
+  <div class="solarSystem">
     <div class="box cls-1 fade">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 500 500">            
-          <circle id="circle-1" class="cls-1 fade" cx="250" cy="250" r="100"/>
+          <circle id="circle-1" class="cls-1" cx="250" cy="250" r="100"/>
           <circle id="circle-2" class="cls-1" cx="250" cy="250" r="150"/>
           <circle id="circle-3" class="cls-1" cx="250" cy="250" r="200"/>
-          <circle id="circle-4"  class="cls-1 fade" cx="250" cy="250" r="250"/>
+          <circle id="circle-4"  class="cls-1" cx="250" cy="250" r="250"/>
       </svg>
       <div id="icon-w"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"   x="0px" y="0px" width="70px" height="58px" viewBox="16 22 70 58" enable-background="new 16 22 70 58" xml:space="preserve">
         <path fill="#FFFFFF" d="M63.388,40.231c0.803,0,1.598,0.058,2.386,0.147c-2.144-9.983-12.815-17.4-24.998-17.4   C27.156,22.978,16,32.261,16,44.05c0,6.804,3.711,12.392,9.914,16.727l-2.478,7.453l8.662-4.344   c3.099,0.613,5.585,1.242,8.678,1.242c0.777,0,1.549-0.038,2.313-0.098c-0.484-1.656-0.765-3.391-0.765-5.192   C42.324,49.014,51.619,40.231,63.388,40.231z M50.066,33.512c1.865,0,3.101,1.229,3.101,3.093c0,1.857-1.235,3.101-3.101,3.101   c-1.857,0-3.721-1.244-3.721-3.101C46.346,34.742,48.209,33.512,50.066,33.512z M32.727,39.706c-1.856,0-3.73-1.244-3.73-3.101   c0-1.863,1.874-3.093,3.73-3.093c1.857,0,3.093,1.229,3.093,3.093C35.819,38.462,34.584,39.706,32.727,39.706z"/>
@@ -343,6 +344,13 @@
           </div>
         </div>
     </div>
+  </div>
+
+  <div class="astronautBox">
+    <div class="astronaut">
+      <img src="images/contents/astronut.png" alt=""> 
+    </div>
+  </div>
     </section>
     <footer id="footer" class="p_r">
         <div class="area">

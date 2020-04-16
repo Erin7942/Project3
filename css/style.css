@@ -386,7 +386,7 @@ transition: transform 0.5s => transition: none
   width: 100%;
   height: auto;
   background: #03090a; }
-  #content .circle_ani h2 {
+  #content .projectContent h2 {
     position: absolute;
     width: 100%;
     top: 140px;
@@ -395,47 +395,38 @@ transition: transform 0.5s => transition: none
     font-weight: 200;
     color: #fff;
     letter-spacing: 0.05rem; }
-  #content .circle_ani {
+  #content .projectContent {
     /* overflow: hidden; */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    width: 30%;
     height: 200px;
     margin: 0 auto;
     top: -100px; }
-    #content .circle_ani svg {
+    #content .projectContent .projectCircleAnim.on svg {
       height: 300px;
-      width: 300px; }
-      #content .circle_ani svg:nth-child(2) {
-        transform: scaleX(-1) translateX(50%) translateY(-50%);
-        /* point */
-        position: absolute;
-        top: 50%;
-        left: 49%; }
-      #content .circle_ani svg circle {
+      width: 300px;}
+      #content .projectContent .projectCircleAnim.on svg:nth-child(2) {
+      transform: scaleX(-1) translateX(50%) translateY(-50%);
+      /* point */
+      position: absolute;
+      top: 50%;
+      left: 49%; }
+      #content .projectContent .projectCircleAnim.on svg circle {
         fill: none;
         stroke: #ffffff;
         stroke-width: 0.3px;
         animation: load 1s linear alternate forwards; }
-      #content .circle_ani svg .outer {
+      #content .projectContent .projectCircleAnim.on svg .outer {
         stroke-dasharray: 505;
         stroke-dashoffset: 505; }
-      #content .circle_ani svg .inner {
+      #content .projectContent .projectCircleAnim.on svg .inner {
         stroke-dasharray: 475;
         stroke-dashoffset: 475;
         animation-delay: 1s; }
 
-@media only screen and (max-width: 760px) {
-  #content .circle_ani h2 {
-    top: 200px; }
-  #content .circle_ani svg:nth-child(1) {
-    padding-top: 30px; }
-  #content .circle_ani svg:nth-child(2) {
-    position: absolute;
-    top: 100%;
-    left: 49%; } }
 /* section project modal */
 #content .row {
   max-width: 1200px;
@@ -943,7 +934,16 @@ transition: transform 0.5s => transition: none
 
   .talent li {
     float: none;
-    width: 100%; } }
+    width: 100%; }
+
+  .top_visual .txt {
+    top: 80%; }
+    .top_visual .txt .location {
+      margin-bottom: 10px; }
+    .top_visual .txt .ani_txt {
+      font-size: 1.2rem; }
+    .top_visual .txt h2 {
+      font-size: 1.2rem; } }
 @media all and (max-width: 760px) {
   body {
     font-size: 14px; }
@@ -976,16 +976,7 @@ transition: transform 0.5s => transition: none
         top: 10px; }
 
   #gnb {
-    padding: 60px 20px 10px; }
-
-  .top_visual {
-    height: 250px; }
-    .top_visual .txt {
-      top: 55%; }
-      .top_visual .txt .location {
-        margin-bottom: 10px; }
-      .top_visual .txt h2 {
-        font-size: 2.2rem; } }
+    padding: 60px 20px 10px; } }
 @media all and (max-width: 640px) {
   /* calc 함수에 괄호가 연달아 있는 경우 공백 중요함 */
   #snb .area .dep {
@@ -994,17 +985,30 @@ transition: transform 0.5s => transition: none
   body {
     font-size: 12px; }
 
-  .top_visual .txt .location {
-    font-size: 1.125rem; }
-  .top_visual .txt h2 {
-    font-size: 2.4rem; } }
+  .top_visual .txt {
+    top: 100%; }
+    .top_visual .txt .location {
+      margin-bottom: 10px; }
+    .top_visual .txt .ani_txt {
+      font-size: 0.5rem; }
+    .top_visual .txt h2 {
+      font-size: 1.2rem;
+      margin-top: 130px; }
+    .top_visual .txt .Underline {
+      left: 10%;
+      margin-top: 60px; }
+
+  #content .projectContent {
+    width: 50%; } }
+.solarSystem {
+  background: #000000; }
+
 .box {
   position: relative;
-  left: 35%;
+  left: 37%;
   width: 500px;
   height: 700px;
-  top: 0px;
-  margin-top: 100px; }
+  top: 0px; }
   .box .cls-1 {
     fill: none;
     stroke: #ddd;
@@ -1104,56 +1108,98 @@ transition: transform 0.5s => transition: none
 .icon-90:nth-child(2) {
   min-width: 240px; }
 
-.box .icon:nth-child(1) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(1) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(1) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(1) {
   animation: bouncePar1 ease-in-out forwards; }
   .box.on .icon:nth-child(1) div {
     animation: bounceChild1 ease-in-out forwards; }
 
-.box .icon:nth-child(2) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(2) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(2) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(2) {
   animation: bouncePar2 ease-in-out forwards; }
   .box.on .icon:nth-child(2) div {
     animation: bounceChild2 ease-in-out forwards; }
 
-.box .icon:nth-child(3) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(3) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(3) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(3) {
   animation: bouncePar3 ease-in-out forwards; }
   .box.on .icon:nth-child(3) div {
     animation: bounceChild3 ease-in-out forwards; }
 
-.box .icon:nth-child(4) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(4) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(4) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(4) {
   animation: bouncePar4 ease-in-out forwards; }
   .box.on .icon:nth-child(4) div {
     animation: bounceChild4 ease-in-out forwards; }
 
-.box .icon:nth-child(5) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(5) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(5) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(5) {
   animation: bouncePar5 ease-in-out forwards; }
   .box.on .icon:nth-child(5) div {
     animation: bounceChild5 ease-in-out forwards; }
 
-.box .icon:nth-child(6) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(6) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(6) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(6) {
   animation: bouncePar6 ease-in-out forwards; }
   .box.on .icon:nth-child(6) div {
     animation: bounceChild6 ease-in-out forwards; }
 
-.box .icon:nth-child(7) div {
-  transform: translate3d(0, 0, 0) scale(0) rotate(0); }
+.box .icon:nth-child(7) {
+  position: relative;
+  left: 250px;
+  top: 350px;
+  width: 0px;
+  height: 0px; }
+  .box .icon:nth-child(7) div {
+    transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
 .box.on .icon:nth-child(7) {
   animation: bouncePar7 ease-in-out forwards; }
@@ -1163,72 +1209,20 @@ transition: transform 0.5s => transition: none
 @media all and (max-width: 1260px) {
   .box {
     position: relative;
-    left: 35%;
-    margin-top: 700px; }
-
-  .icon-90 span {
-    width: 99px;
-    height: 99px; }
-
-  .icon-70 span {
-    width: 77px;
-    height: 77px; }
-
-  .icon-50 span {
-    width: 55px;
-    height: 55px; }
-
-  .box .icon:nth-child(1) {
-    animation: bouncePar1 ease-in-out forwards; }
-    .box .icon:nth-child(1) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild1 ease-in-out forwards; }
-
-  .box .icon:nth-child(2) {
-    animation: bouncePar2 ease-in-out forwards; }
-    .box .icon:nth-child(2) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild2 ease-in-out forwards; }
-
-  .box .icon:nth-child(3) {
-    animation: bouncePar3 ease-in-out forwards; }
-    .box .icon:nth-child(3) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild3 ease-in-out forwards; }
-
-  .box .icon:nth-child(4) {
-    animation: bouncePar4 ease-in-out forwards; }
-    .box .icon:nth-child(4) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild4 ease-in-out forwards; }
-
-  .box .icon:nth-child(5) {
-    animation: bouncePar5 ease-in-out forwards; }
-    .box .icon:nth-child(5) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild5 ease-in-out forwards; }
-
-  .box .icon:nth-child(6) {
-    animation: bouncePar6 ease-in-out forwards; }
-    .box .icon:nth-child(6) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild6 ease-in-out forwards; }
-
-  .box .icon:nth-child(7) {
-    animation: bouncePar7 ease-in-out forwards; }
-    .box .icon:nth-child(7) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild7 ease-in-out forwards; } }
+    left: 30%; }
+    .box.on .cls-1 {
+      animation: cirScale 0.2s ease-in-out forwards; } }
+@media all and (max-width: 960px) {
+  .box {
+    position: relative;
+    left: 22%; }
+    .box.on .cls-1 {
+      animation: cirScale 0.2s ease-in-out forwards; } }
 @media all and (max-width: 760px) {
   .box {
     max-width: 80%;
     position: relative;
-    left: 10%;
-    width: 500px;
-    height: 800px;
-    margin-top: 200px;
-    top: 100px;
-    text-align: center; }
+    left: 15%; }
 
   .icon-90 span {
     width: 72px;
@@ -1240,94 +1234,12 @@ transition: transform 0.5s => transition: none
 
   .icon-50 span {
     width: 40px;
-    height: 40px; }
-
-  .box .icon:nth-child(1) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar1 ease-in-out forwards; }
-    .box .icon:nth-child(1) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild1 ease-in-out forwards infinite; }
-
-  .box .icon:nth-child(2) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar2 ease-in-out forwards; }
-    .box .icon:nth-child(2) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild2 ease-in-out forwards infinite; }
-
-  .box .icon:nth-child(3) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar3 ease-in-out forwards; }
-    .box .icon:nth-child(3) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild3 ease-in-out forwards infinite; }
-
-  .box .icon:nth-child(4) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar4 ease-in-out forwards; }
-    .box .icon:nth-child(4) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild4 ease-in-out forwards infinite; }
-
-  .box .icon:nth-child(5) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar5 ease-in-out forwards; }
-    .box .icon:nth-child(5) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild5 ease-in-out forwards infinite; }
-
-  .box .icon:nth-child(6) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar6 ease-in-out forwards; }
-    .box .icon:nth-child(6) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild6 ease-in-out forwards infinite; }
-
-  .box .icon:nth-child(7) {
-    position: relative;
-    left: 250px;
-    top: 410px;
-    width: 0px;
-    height: 0px;
-    animation: bouncePar7 ease-in-out forwards; }
-    .box .icon:nth-child(7) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild7 ease-in-out forwards infinite; } }
+    height: 40px; } }
 @media all and (max-width: 480px) {
   .box {
     max-width: 80%;
     position: relative;
-    left: 8%;
-    width: 500px;
-    height: 800px;
-    margin-top: 0px;
-    top: 100px;
-    text-align: center; }
+    left: 10%; }
 
   .icon-90 span {
     width: 40.5px;
@@ -1343,80 +1255,66 @@ transition: transform 0.5s => transition: none
 
   .box .icon:nth-child(1) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar1 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(1) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild1 ease-in-out forwards; }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
   .box .icon:nth-child(2) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar2 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(2) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild2 ease-in-out forwards; }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
   .box .icon:nth-child(3) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar3 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(3) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild3 ease-in-out forwards; }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
   .box .icon:nth-child(4) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar4 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(4) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild4 ease-in-out forwards; }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
   .box .icon:nth-child(5) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar5 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(5) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild5 ease-in-out forwards; }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
   .box .icon:nth-child(6) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar6 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(6) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild6 ease-in-out forwards; }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); }
 
   .box .icon:nth-child(7) {
     position: relative;
-    left: 130px;
-    top: 410px;
+    left: 150px;
+    top: 350px;
     width: 0px;
-    height: 0px;
-    animation: bouncePar7 ease-in-out forwards; }
+    height: 0px; }
     .box .icon:nth-child(7) div {
-      transform: translate3d(0, 0, 0) scale(0) rotate(0);
-      animation: bounceChild7 ease-in-out forwards; } }
+      transform: translate3d(0, 0, 0) scale(0) rotate(0); } }
 /* 차트 */
 #chart-anim {
   background: white;
@@ -1633,15 +1531,28 @@ transition: transform 0.5s => transition: none
   #chart-anim .skills h2 {
     font-size: 8vw;
     text-align: center; } }
-.astronaut {
-  animation: astronaut alternate 25s cubic-bezier(0.37, 0.44, 0.53, 0.59) 0s infinite;
-  height: 400px;
+.astronautBox {
   position: relative;
-  top: 35%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  z-index: 1000; }
+  height: 400px;
+  width: 100%;
+  background: #000000; }
+  .astronautBox .astronaut {
+    position: absolute;
+    animation: astronautAll alternate 20s infinite;
+    top: 30%;
+    height: 10%;
+    width: 10%;
+    z-index: 100; }
 
+@media only screen and (max-width: 480px) {
+  .astronautBox {
+    height: 200px; }
+    .astronautBox .astronaut {
+      position: absolute;
+      animation: astronaut480 alternate 20s infinite;
+      height: 20%;
+      width: 20%;
+      z-index: 100; } }
 .astronaut2 {
   animation: astronaut2 20s infinite;
   margin-top: 70px; }
@@ -1668,9 +1579,6 @@ transition: transform 0.5s => transition: none
     transform: scale(2); }
   100% {
     transform: scale(1); } }
-.icon-w.on {
-  animation: icon-w 0.4s ease-in-out forwards 0.5s; }
-
 #circle-1 {
   animation-delay: 0.3s; }
 
@@ -1688,9 +1596,6 @@ transition: transform 0.5s => transition: none
     transform: scale(0); }
   100% {
     transform: scale(1); } }
-/* .cls-1.on{
-  animation:cirScale 0.2s ease-in-out forwards;   
-} */
 @keyframes bouncePar1 {
   0%,30% {
     transform: rotate(50deg); }
@@ -1802,15 +1707,22 @@ transition: transform 0.5s => transition: none
 .fadeIn.on {
   animation: fadeIn forwards 3s cubic-bezier(0.22, 0.61, 0.36, 1) 0s; }
 
-@keyframes astronaut {
+@keyframes astronautAll {
   0% {
-    left: -15%;
-    transform: rotate(20deg); }
-  50% {
-    left: 50%; }
-  100% {
     left: 0%;
-    transform: rotate(780deg); } }
+    transform: rotate(180deg); }
+  50% {
+    left: 90%; }
+  100% {
+    left: 0%; } }
+@keyframes astronaut480 {
+  0% {
+    left: 0%;
+    transform: rotate(180deg); }
+  50% {
+    left: 75%; }
+  100% {
+    left: 0%; } }
 @keyframes astronaut2 {
   0% {
     transform: rotate(0deg); }

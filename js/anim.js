@@ -395,14 +395,14 @@ window.onload=function(){
       e.preventDefault();
       self._animateOut();
     });
-    this.$expander.children('.expander-nav').on('click', 'a', function(e) {
-      e.preventDefault();
-      var new_class = $(this).attr('class'),
-          $circle = self.$el.find('ul .' + new_class);
+    // this.$expander.children('.expander-nav').on('click', 'a', function(e) {
+    //   e.preventDefault();
+    //   var new_class = $(this).attr('class'),
+    //       $circle = self.$el.find('ul .' + new_class);
   
-      console.log("new class is", new_class, "new circle is", $circle[0]);
-      self._animateSwitch($circle);
-    });
+    //   console.log("new class is", new_class, "new circle is", $circle[0]);
+    //   self._animateSwitch($circle);
+    // });
   };
   
   HeroCircles.prototype.initMobile = function() {

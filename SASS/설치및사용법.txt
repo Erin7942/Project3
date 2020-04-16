@@ -1,0 +1,129 @@
+SASS는 Syntactically Awesome StyleSheets의 약자
+“문장 구성적으로 끝내주는 스타일시트” 라고 표현. 멋진 CSS
+장점 : 반복적인 작업을 최대한 줄여주고, 생산성을 높이며, 작업의 효율성을 극대화함
+
+1) 루비 설치 https://rubyinstaller.org/downloads/ (WITHOUT DEVKIT 버젼)
+rubyinstaller-2.6.5-1-x64.exe
+
+2) 윈도우 > 시작 > cmd창 열기(명령프롬프트)
+
+3)  Sass 설치 명령어는 다음과 같습니다 => 만약 이 명령어를 입력 후 액세스 허용 창이 뜨면 허용해주시면 됩니다.
+http://recoveryman.tistory.com/276
+gem install sass
+
+4) scss 파일을 css 파일로 변환 시켜줄 명령을 입력
+만들 폴더의 경로명을 복사해옴(경로명을 정확히, 한글 폴더명 사용하지 못함) ☞ 만약 드라이브를 이동하려면 먼저 => d: 라고 한다음 실행시킨다
+cd C:\Users\hi\Dropbox\web\App\css
+
+sass --watch .:.
+현재 디렉토리를 감시해서 scss파일을 생성하면 자동으로 css파일을 생성해줌
+자동으로 style.css와 style.css.map, .sass-cache폴더가 생성됨
+
+★ cmd 창을 닫으면 실시간 변경은 이루어 지지 않는다
+
+
+SASS 중요 팁
+한글 주석을 달면 오류가 생성됨
+주석 : /*  */  or  //
+생성하는 파일의 확장명은 .scss 이다
+
+① Variable (변수) : 변수명 앞에는 반드시 $가 붙는다
+선언		$active_color : #ff6600;
+호출		a{color:$active_color;}
+
+
+② Nesting(중첩)
+기존 방식
+ul{margin-top: 5px;}
+ul li{display: inline-block;}
+ul li a{color: #f00}
+ul li a:hover{color: #000}
+     ↓
+Sass 방식
+ul{
+	margin-top: 5px;
+	li{
+		display: inline-block;
+		a{
+			color: #f00;
+			&:hover{		가상선택자 &:
+				color: #000
+			}
+		}
+	}
+}
+
+※ 연관 있는 반복에는 @extend를 사용하자. 그냥 같을 뿐이라면 믹스인을 사용하자.
+③ Extend (확장) : @media 내부에서 사용할수 없다
+선언
+.pad100tb{
+	padding-top:100px;
+	padding-bottom: 100px;
+}
+호출
+.container{
+	@extend .pad100tb;
+}
+
+
+④ @mixin => argument (인수) 를 받을 수 있다
+선언
+@mixin opa ($num1, $num2) {
+	-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$num1})';
+	opacity: $num2;
+}
+호출
+.fade_in{
+	@include opa(100, 1);
+}
+
+
+mixin에 인수를 넣지 않아도 가능함
+@mixin Test {
+	background: yellow;
+}
+body{
+	@include Test;
+}
+
+변수값은 하나인데 속성이 여러개인 경우 변수명 뒤에 점 세개(...)를 추가
+@mixin box-shadow($shadows...) {
+   -webkit-box-shadow: $shadows;
+   -moz-box-shadow: $shadows;
+   box-shadow: $shadows;
+}
+.test{
+   @include box-shadow(0px 4px 5px #666, 2px 4px 10px #999);
+}
+
+
+팁
+* 특정 선택자를 하위 선택자가 아닌 독립된 선택자로 끌어 올려야 하는 경우 @at-root 사용
+scss코드
+.sel1{
+	padding-top: 18px;
+	@at-root .sel2{margin: 10px;}
+}
+
+컴파일 후 css코드
+.sel1{padding-top: 18px;}
+.sel2{margin: 10px;}
+
+* &
+앞에 작성 : 부모선택자를 연결하기 위한 방식
+뒤에 작성 : 부모와 자식의 순서가 바뀜
+
+scss코드
+.sel1{
+	padding-top: 18px;
+	.sel2 &{margin: 10px;}
+}
+
+컴파일 후 css코드
+.sel1{padding-top: 18px;}
+.sel2 .sel1{margin: 10px;}
+
+* calc() 없이 연산 가능
++,- 연산자를 사용 할 때는 항상 단위를 통일시켜야한다. 그렇지 안으면 코드는 오류가 난다.
+width: 100px/2;
+margin-left: 5px + 8px/2px;
