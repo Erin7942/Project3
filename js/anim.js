@@ -92,56 +92,8 @@ window.onload=function(){
   
   };
   
-  HeroCircles.prototype._animateInTitle = function(delay) {
-    var self = this,
-        $title = this.$expander.children('.title-overlay'),
-        cur_class = this.$cur_circle.data('name'),
-        $expander_nav = this.$expander.children('.expander-nav').children('a').not('.' + cur_class);
-  
-    TweenLite.set($expander_nav.last(), { x: 160, right: 4,  left: 'auto', delay: delay });
-    TweenLite.set($expander_nav.first(), {
-      x: -160,
-      left: 4,
-      right: 'auto',
-      delay: delay,
-      onComplete: function() {
-        // add content to title overlay after delay
-        $title.html(self.$cur_circle.siblings('.tagline').html());
-      }
-    });
-  
-    // animate in title overlay
-    TweenLite.to($title, 0.5, {
-      y: 40,
-      delay: delay,
-      ease: Back.easeOut
-    });
-  
-    TweenLite.to($expander_nav, 0.15, {
-      x: 0,
-      delay: delay + 0.5
-    });
-  };
-  
-  HeroCircles.prototype._animateOutTitle = function() {
-    var $title = this.$expander.children('.title-overlay'),
-        cur_class = this.$cur_circle.data('name'),
-        $expander_nav = this.$expander.children('.expander-nav').children('a').not('.' + cur_class);
-  
-    // animate out title overlay
-    TweenLite.to($title, 0.5, {
-      y: $title.outerHeight()
-    });
-  
-    // animate out circles
-    TweenLite.to($expander_nav.first(), 0.15, {
-      x: -160
-    });
-    TweenLite.to($expander_nav.last(), 0.15, {
-      x: 160
-    });
-  };
-  
+
+
   HeroCircles.prototype._animateIn = function(circle) {
     var $circle = $(circle),
         $border = $circle.siblings('.border'),
@@ -257,10 +209,55 @@ window.onload=function(){
     var self = this,
         $title = this.$expander.children('.title-overlay'),
         cur_class = this.$cur_circle.data('name'),
-        $expander_nav = this.$expander.children('.expander-nav').children('a').not('.' + cur_class);
-  
-    TweenLite.set($expander_nav.last(), { x: 160, right: 4,  left: 'auto', delay: delay });
-    TweenLite.set($expander_nav.first(), {
+        $expander_nav = this.$expander.children('.expander-nav').children('a');
+
+        var left;
+        var right;
+
+        if(cur_class == "discover")
+        {
+          $expander_nav.eq(0).show();
+          $expander_nav.eq(1).show();
+
+          $expander_nav.eq(2).hide();
+          $expander_nav.eq(3).hide();
+          $expander_nav.eq(4).hide();
+          $expander_nav.eq(5).hide();
+
+          left = 1;
+          right = 0;
+        }
+        else if(cur_class == "create")
+        {
+          $expander_nav.eq(0).hide();
+          $expander_nav.eq(1).hide();
+
+          $expander_nav.eq(2).show();
+          $expander_nav.eq(3).show();
+
+          $expander_nav.eq(4).hide();
+          $expander_nav.eq(5).hide();
+
+          left = 3;
+          right = 2;
+        }
+        else if(cur_class == "evolve")
+        {
+          $expander_nav.eq(0).hide();
+          $expander_nav.eq(1).hide();
+          $expander_nav.eq(2).hide();
+          $expander_nav.eq(3).hide();
+
+          $expander_nav.eq(4).show();
+          $expander_nav.eq(5).show();
+
+          left = 5;
+          right = 4;
+        }
+
+        
+    TweenLite.set($expander_nav.eq(left), { x: 160, right: 4,  left: 'auto', delay: delay });
+    TweenLite.set($expander_nav.eq(right), {
       x: -160,
       left: 4,
       right: 'auto',
@@ -270,14 +267,14 @@ window.onload=function(){
         $title.html(self.$cur_circle.siblings('.tagline').html());
       }
     });
-  
+
     // animate in title overlay
     TweenLite.to($title, 0.5, {
       y: 40,
       delay: delay,
       ease: Back.easeOut
     });
-  
+
     TweenLite.to($expander_nav, 0.15, {
       x: 0,
       delay: delay + 0.5
@@ -287,18 +284,39 @@ window.onload=function(){
   HeroCircles.prototype._animateOutTitle = function() {
     var $title = this.$expander.children('.title-overlay'),
         cur_class = this.$cur_circle.data('name'),
-        $expander_nav = this.$expander.children('.expander-nav').children('a').not('.' + cur_class);
-  
+        $expander_nav = this.$expander.children('.expander-nav').children('a');
+
+
+        var left;
+        var right;
+
+        if(cur_class == "discover")
+        {
+          left = 1;
+          right = 0;
+        }
+        else if(cur_class == "create")
+        {
+          left = 3;
+          right = 2;
+        }
+        else if(cur_class == "evolve")
+        {
+          left = 5;
+          right = 4;
+        }
+
+
     // animate out title overlay
     TweenLite.to($title, 0.5, {
       y: $title.outerHeight()
     });
-  
+
     // animate out circles
-    TweenLite.to($expander_nav.first(), 0.15, {
+    TweenLite.to($expander_nav.eq(right), 0.15, {
       x: -160
     });
-    TweenLite.to($expander_nav.last(), 0.15, {
+    TweenLite.to($expander_nav.eq(left), 0.15, {
       x: 160
     });
   };

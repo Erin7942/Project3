@@ -617,6 +617,9 @@ transition: transform 0.5s => transition: none
     background-image: url(../images/contents/project_01_sub.png); }
   #content .hero-circles .expander-nav .discover {
     background-image: url(../images/contents/project_01_sub.png); }
+    #content .hero-circles .expander-nav .test4{ background-image: url(../images/contents/project_01_sub.png); }
+    #content .hero-circles .expander-nav .test5{ background-image: url(../images/contents/project_01_sub.png); }
+    #content .hero-circles .expander-nav .test6{ background-image: url(../images/contents/project_01_sub.png); }
   #content .hero-circles .tagline {
     position: relative;
     text-align: center;
